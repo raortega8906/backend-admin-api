@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('admin.experiences.index')" :active="request()->routeIs('admin.experiences.index')">
                         {{ __('Work Experience') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('admin.projects.index')">
+                        {{ __('Projects') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -75,6 +78,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.experiences.index')" :active="request()->routeIs('admin.experiences.index')">
                 {{ __('Work Experience') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('admin.projects.index')">
+                {{ __('Projects') }}
             </x-responsive-nav-link>
         </div>
 
