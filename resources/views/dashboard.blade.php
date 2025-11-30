@@ -151,22 +151,11 @@
                                 <code class="text-sm text-gray-800 break-all">/api/v1/projects</code>
                                 <p class="text-xs text-gray-500 mt-1">Obtener todos los proyectos</p>
                             </div>
-
-                            <div class="p-3 bg-gray-50 rounded-lg border border-gray-200">
-                                <div class="flex items-center justify-between mb-2">
-                                    <span class="text-xs font-semibold text-green-600 bg-green-100 px-2 py-1 rounded">GET</span>
-                                    <button onclick="copyToClipboard('{{ url('/api/portfolio') }}')" 
-                                            class="text-xs text-gray-500 hover:text-gray-700">
-                                        Copiar
-                                    </button>
-                                </div>
-                                <code class="text-sm text-gray-800 break-all">/api/portfolio</code>
-                                <p class="text-xs text-gray-500 mt-1">Obtener portafolio completo</p>
-                            </div>
                         </div>
 
                         <a href="{{ url('/api/documentation') }}" 
-                           class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                           class="mt-4 inline-flex items-center text-sm text-indigo-600 hover:text-indigo-800 font-medium"
+                           target="_blank">
                             Ver documentación completa
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
