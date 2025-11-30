@@ -23,8 +23,8 @@ Sistema de gestión de portafolio profesional con API REST para administrar expe
 
 1. **Clonar el repositorio**
 ```bash
-git clone <https://github.com/raortega8906/backend-admin-api>
-cd portfolio-backend
+git clone https://github.com/raortega8906/backend-admin-api
+cd backend-admin-api
 ```
 
 2. **Instalar dependencias**
