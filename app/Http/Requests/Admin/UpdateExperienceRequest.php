@@ -24,11 +24,30 @@ class UpdateExperienceRequest extends FormRequest
         return [
             'company' => 'required|string|max:255',
             'position' => 'required|string|max:255',
-            'start_year' => 'required|integer|min:1900|max:' . date('Y'),
-            'end_year' => 'nullable|integer|min:1900|max:' . date('Y'),
-            'is_current' => 'required|boolean',
-            'responsibilities' => 'required|array|min:1',
-            'responsibilities.*' => 'string|max:1000',
+            'start_year' => 'required|integer|min:1970|max:' . date('Y'),
+            'end_year' => 'nullable|integer|min:1970|max:' . (date('Y') + 10) . '|gte:start_year',
+            'is_current' => 'boolean',
+            'responsibilities' => 'nullable|array',
+            'responsibilities.*' => 'nullable|string|max:500',
         ];
     }
+
+    public function messages(): array
+    {
+        return [
+            'company.required' => 'La empresa es obligatoria.',
+            'position.required' => 'La posición es obligatoria.',
+            'start_year.required' => 'El año de inicio es obligatorio.',
+            'end_year.gte' => 'El año de fin debe ser mayor o igual al año de inicio.',
+        ];
+    }
+
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'is_current' => $this->boolean('is_current'),
+            'responsibilities' => array_filter($this->responsibilities ?? [], fn($r) => !empty($r)),
+        ]);
+    }
+    
 }
