@@ -56,6 +56,25 @@
                                     @endforeach
                                 </ul>
                             @endif
+
+                            <!-- Acciones -->
+                            <div class="mt-4 flex gap-3">
+                                <a href="{{ route('admin.experiences.edit', $experience) }}"
+                                class="text-sm text-indigo-600 hover:text-indigo-800 font-medium">
+                                    Editar
+                                </a>
+
+                                <form action="{{ route('admin.experiences.destroy', $experience) }}"
+                                    method="POST"
+                                    onsubmit="return confirm('¿Seguro que deseas eliminar esta experiencia?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"
+                                            class="text-sm text-red-600 hover:text-red-800 font-medium">
+                                        Eliminar
+                                    </button>
+                                </form>
+                            </div>
                         </div>
                     @empty
                         <div class="text-center py-12">
@@ -66,5 +85,17 @@
                 </div>
             </div>
         </div>
+
+        {{-- paginate --}}
+        <div class="mt-6 max-w-7xl mx-auto sm:px-6 lg:px-8">
+            {{ $experiences->links() }}
+        </div>
+
     </div>
 </x-app-layout>
+
+<style>
+    p.text-sm.text-gray-700.leading-5.dark\:text-gray-600 {
+        display: none;
+    }
+</style>
