@@ -154,5 +154,24 @@
             `;
             container.appendChild(div);
         }
+
+        // Deshabilitar end_year cuando is_current está marcado
+        document.getElementById('is_current').addEventListener('change', function() {
+            const endYearInput = document.getElementById('end_year');
+            if (this.checked) {
+                endYearInput.value = '';
+                endYearInput.disabled = true;
+                endYearInput.classList.add('bg-gray-100');
+            } else {
+                endYearInput.disabled = false;
+                endYearInput.classList.remove('bg-gray-100');
+            }
+        });
+
+        // Ejecutar al cargar si ya está marcado
+        if (document.getElementById('is_current').checked) {
+            document.getElementById('end_year').disabled = true;
+            document.getElementById('end_year').classList.add('bg-gray-100');
+        }
     </script>
 </x-app-layout>
