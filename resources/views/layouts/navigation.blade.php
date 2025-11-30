@@ -16,10 +16,10 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.experiences.index')" :active="request()->routeIs('admin.experiences.index')">
-                        {{ __('Work Experience') }}
+                        {{ __('Experiencia') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('admin.projects.index')">
-                        {{ __('Projects') }}
+                        {{ __('Proyectos') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -77,10 +77,10 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.experiences.index')" :active="request()->routeIs('admin.experiences.index')">
-                {{ __('Work Experience') }}
+                {{ __('Experiencia') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('admin.projects.index')">
-                {{ __('Projects') }}
+                {{ __('Proyectos') }}
             </x-responsive-nav-link>
         </div>
 
