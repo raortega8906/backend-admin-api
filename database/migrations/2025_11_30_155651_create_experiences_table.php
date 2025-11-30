@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('company');
             $table->string('position');
             $table->year('start_year');
-            $table->year('end_year');
+            $table->year('end_year')->nullable();
             $table->boolean('is_current')->default(false);
             $table->json('responsibilities');
             $table->timestamps();
