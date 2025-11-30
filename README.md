@@ -186,11 +186,11 @@ El panel de administración está protegido con Laravel Breeze. Para acceder:
 1. Registra un usuario:
 ```bash
 php artisan tinker
->>> User::create(['name' => 'Admin', 'email' => 'admin@example.com', 'password' => bcrypt('password'), 'is_admin' => 'true']);
+>>> User::create(['name' => 'Admin', 'email' => 'admin@admin.com', 'password' => bcrypt('admin'), 'is_admin' => 'true']);
 ```
 o directamente:
 ```bash
-php artisan migrate --force
+php artisan migrate:refresh --seed
 ```
 
 2. Accede en `/login`
