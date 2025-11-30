@@ -11,7 +11,7 @@ class UpdateExperienceRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class UpdateExperienceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'company' => 'required|string|max:255',
+            'position' => 'required|string|max:255',
+            'start_year' => 'required|integer|min:1900|max:' . date('Y'),
+            'end_year' => 'nullable|integer|min:1900|max:' . date('Y'),
+            'is_current' => 'required|boolean',
+            'responsibilities' => 'required|array|min:1',
+            'responsibilities.*' => 'string|max:1000',
         ];
     }
 }
