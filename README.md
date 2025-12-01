@@ -255,14 +255,14 @@ Este proyecto está bajo la licencia MIT.
 
 Rafael A. Ortega - [raortega8906@gmail.com](mailto:raortega8906@gmail.com)
 
-## 🔮 Próximas Funcionalidades
+<!-- ## 🔮 Próximas Funcionalidades
 
 - [ ] Integración con Swagger/OpenAPI
 - [ ] Autenticación API con Sanctum
 - [ ] Sistema de tags para proyectos
 - [ ] Filtros y búsqueda en API
 - [ ] Exportación de portafolio a PDF
-- [ ] Versionado v2 de API con GraphQL
+- [ ] Versionado v2 de API con GraphQL -->
 
 ## 📞 Soporte
 
