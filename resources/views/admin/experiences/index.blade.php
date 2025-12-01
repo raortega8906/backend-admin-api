@@ -109,3 +109,9 @@
         </div>
     </div>
 </x-app-layout>
+
+<style>
+    p.text-sm.text-gray-700.leading-5.dark\:text-gray-600 {
+        display: none;
+    }
+</style>
