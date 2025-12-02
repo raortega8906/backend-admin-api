@@ -17,6 +17,6 @@ Route::prefix('v1')->group(function() {
 
     // Projects:
     Route::get('projects', [ApiProjectController::class, 'index']);
-    Route::get('projects/project', [ApiProjectController::class, 'show']);
+    Route::get('projects/{project}', [ApiProjectController::class, 'show']);
 
 });
