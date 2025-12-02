@@ -33,9 +33,9 @@ class ApiProjectController extends Controller
         if (!$project) {
             return response()->json([
                 'status' => 404,
-                'message' => 'Proyecto no encontrado',
-                'data' => $project
-            ], 404);    
+                'message' => 'No se pudo encontrar el proyecto',
+                'data' => []
+            ], 404);
         }
 
         return response()->json([
