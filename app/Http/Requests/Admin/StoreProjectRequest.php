@@ -24,6 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'description' => 'required|string',
+            'type' => 'required|in:web-design,custom-development',
             'url' => 'nullable|url',
             'image_path' => 'required|file|mimes:png,jpg,jpeg,webp,avif',
         ];

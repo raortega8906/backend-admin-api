@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
+            $table->enum('type', ['web-design', 'custom-development']);
             $table->string('url')->nullable();
             $table->string('image_path');
             $table->timestamps();

@@ -35,16 +35,23 @@
                             <!-- Encabezado -->
                             <div class="flex justify-between items-start gap-4 mb-3">
                                 <div class="flex-1">
-                                    <h3 class="text-lg font-semibold text-gray-900">
-                                        {{ $project->name }}
-                                    </h3>
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <h3 class="text-lg font-semibold text-gray-900">
+                                            {{ $project->name }}
+                                        </h3>
+                                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
+                                            {{ $project->type === 'web-design' ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800' }}">
+                                            {{ $project->type === 'web-design' ? 'Diseño Web' : 'Desarrollo a Medida' }}
+                                        </span>
+                                    </div>
+                                    
                                     <p class="text-gray-600 mt-1 text-sm">
                                         {{ $project->description }}
                                     </p>
 
                                     @if($project->url)
                                         <a href="{{ $project->url }}" target="_blank" 
-                                           class="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm mt-2 transition">
+                                        class="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm mt-2 transition">
                                             Ver proyecto
                                             <svg class="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -55,21 +62,21 @@
 
                                 @if($project->image_path)
                                     <img src="{{ asset('storage/' . $project->image_path) }}" 
-                                         alt="{{ $project->name }}"
-                                         class="w-32 h-20 object-cover rounded-md shadow-sm">
+                                        alt="{{ $project->name }}"
+                                        class="w-32 h-20 object-cover rounded-md shadow-sm">
                                 @endif
                             </div>
 
                             <!-- Acciones -->
                             <div class="mt-4 flex items-center gap-3">
                                 <a href="{{ route('admin.projects.edit', $project) }}"
-                                   class="text-sm text-indigo-600 hover:text-indigo-800 font-medium transition">
+                                class="text-sm text-indigo-600 hover:text-indigo-800 font-medium transition">
                                     Editar
                                 </a>
 
                                 <form action="{{ route('admin.projects.destroy', $project) }}"
-                                      method="POST"
-                                      onsubmit="return confirm('¿Seguro que deseas eliminar este proyecto?');">
+                                    method="POST"
+                                    onsubmit="return confirm('¿Seguro que deseas eliminar este proyecto?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
